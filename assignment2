@@ -1,0 +1,14 @@
+def proportion_of_education():
+    import pandas as pd
+    import numpy as np
+
+    df = pd.read_csv('assets/NISPUF17.csv')
+    occur = list(df['EDUC1'].value_counts()) #4 3 2 1 
+    d = {
+        'less than high school' :  occur[3]/df["EDUC1"].count(),
+        'high school': occur[2]/df["EDUC1"].count(),
+        'more than high school but not college' : occur[1]/df["EDUC1"].count(),
+        'college' : occur[0]/df["EDUC1"].count()}
+
+    return d
+    raise NotImplementedError()
